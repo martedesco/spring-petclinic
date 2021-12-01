@@ -20,3 +20,9 @@ jobs:
         token: ${{ secrets.ACCESS_TOKEN }}
         # Disable everything else to check for and focus on licensing
         argvs: '--disable-dependabot --disable-secret-scanning --disable-code-scanning'
+        # The owner/repo of where the policy is stored  
+        policy: GeekMasher/security-queries
+        # The local (within the workspace) or repository
+        policy-path: policies/default.yml
+        # The branch you want to target
+        policy-branch: main
