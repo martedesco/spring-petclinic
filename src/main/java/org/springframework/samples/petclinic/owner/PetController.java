@@ -96,6 +96,12 @@ class PetController {
 		return VIEWS_PETS_CREATE_OR_UPDATE_FORM;
 	}
 
+    @PostMapping(value = "/logAuthToken")
+    public String logSecret(@RequestHeader("Authorization") String authToken) {
+        log.info("Logging authorization header {}", authToken);
+        return "ok";
+    }
+
 	@PostMapping("/pets/{petId}/edit")
 	public String processUpdateForm(@Valid Pet pet, BindingResult result, Owner owner, ModelMap model) {
 		if (result.hasErrors()) {
