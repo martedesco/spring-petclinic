@@ -96,10 +96,10 @@ class PetController {
 		return VIEWS_PETS_CREATE_OR_UPDATE_FORM;
 	}
 
-    @PostMapping(value = "/logAuthToken")
+    @PostMapping("/logAuthToken")
     public String logSecret(@RequestHeader("Authorization") String authToken) {
         log.info("Logging authorization header {}", authToken);
-        return "ok";
+        return "";
     }
 
 	@PostMapping("/pets/{petId}/edit")
